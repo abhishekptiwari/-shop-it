@@ -13,9 +13,12 @@ exports.newProduct = async (req,res,next)=>{
 }
 
 
-exports.getProducts = (req,res,next)=>{
+exports.getProducts =async  (req,res,next)=>{
+    const products = await Product.find();
     res.status(200).json({
         success:true,
-        message:'This will show all the data from the database.'
+        message:'All the data from the database.',
+        length:products.length,
+        data:products
     })
 }
