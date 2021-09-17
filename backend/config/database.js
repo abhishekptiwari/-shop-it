@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-require('dotenv').config();
 
-
-const db = ()=>{
+const db = () => {
 
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
@@ -14,8 +11,7 @@ mongoose.connect(process.env.MONGODB_URL, {
   console.log("database connection failed. exiting now...");
   console.error(err);
   process.exit(1);
-})
-
+ })
 }
 
 module.exports = db;
