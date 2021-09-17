@@ -1,3 +1,6 @@
 node_modules
 
-backend/config/config.env
+#backend/config/config.env
+
+config.env
+
