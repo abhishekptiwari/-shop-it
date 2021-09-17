@@ -9,6 +9,7 @@ exports.newProduct = async (req,res,next)=>{
         success:true,
         Data: product
     })
+    product.save()
 }
 
 
