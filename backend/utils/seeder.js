@@ -14,7 +14,7 @@ db();
 const seedProducts = async ()=>{
    try{
 
-    await Product.deleteMany();
+    await Product.deleteMany();  
     console.log('All Products deleted.');
 
     await Product.insertMany(products);
