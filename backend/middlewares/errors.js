@@ -12,6 +12,7 @@ module.exports = (err,req,res,next)=>{
             stack:err.stack
         })
     }
+    
     if(process.env.NODE_ENV === 'PRODUCTION'){
         let error = {...err};
 
@@ -22,7 +23,4 @@ module.exports = (err,req,res,next)=>{
             message: error.message || 'Internal Server Error'
         })
     }
-
-
-   
 }
