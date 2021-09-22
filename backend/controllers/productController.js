@@ -2,8 +2,6 @@ const Product = require('../models/product')
 
 const ErrorHandler = require('../utils/errorHandler');
 
-
-
 //Create new Product => /api/v1/product/new
 exports.newProduct = async (req,res,next)=>{
     const product = await Product.create(req.body);
@@ -14,7 +12,6 @@ exports.newProduct = async (req,res,next)=>{
     })
     product.save()
 }
-
 
 exports.getProducts = async  (req,res,next)=>{
     const products = await Product.find();
