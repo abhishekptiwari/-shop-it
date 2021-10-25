@@ -26,12 +26,19 @@ class APIFeatures {
         // Removing fields from the query
         const removeFields = ['keyword', 'limit' , 'page'];
 
-        removeFields.forEach(el => delete queryCopy[el]);// http://localhost:4000/api/v1/products?keyword=charmount&category=Electronics
+        removeFields.forEach(el => delete queryCopy[el]); // http://localhost:4000/api/v1/products?keyword=charmount&category=Electronics
+       
         console.log(queryCopy);
 
-        this.query = this.query.find(queryCopy);
+
+        //Advance filter for price , rating etc.
+        let queryStr = JSON.stringify(queryCopy); 
+        queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g , match => `$${match}`); // http://localhost:4000/api/v1/products?keyword=apple&price[gt]=1&price[lt]=1000
+
+        console.log(queryStr); 
+
+        this.query = this.query.find(JSON.parse(queryStr));
         return this;
-     
     }
 }
 
