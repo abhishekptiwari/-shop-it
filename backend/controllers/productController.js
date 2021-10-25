@@ -16,8 +16,13 @@ exports.newProduct = catchAsyncErrors(async (req,res,next)=>{
 })
 
 exports.getProducts = catchAsyncErrors(async  (req,res,next) =>{
-    const apiFeatures = new APIFeatures(Product.find(), req.query)
-    const products = await Product.find();
+    const apiFeatures = new APIFeatures(Product.find(), req.query).search()
+
+   
+    const products = await apiFeatures.query;
+
+
+   // const products = await Product.find();
     res.status(200).json({
         success:true,
         message:'All the data from the database.',
