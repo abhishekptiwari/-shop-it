@@ -7,15 +7,21 @@
     "start": "node backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT & nodemon backend/server",
     "prod": "SET NODE_ENV=PRODUCTION & nodemon backend/server",
-    "seeder":"node backend/utils/seeder.js"
+    "seeder": "node backend/utils/seeder.js"
   },
   "author": "Abhishek Tiwari",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.1.2",
-    "mongoose": "^6.0.5"
+    "mongoose": "^6.0.5",
+    "nodemailer": "^6.7.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
